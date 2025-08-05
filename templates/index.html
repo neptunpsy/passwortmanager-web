@@ -2,14 +2,23 @@
 <html>
 <head>
     <title>Passwortmanager</title>
+    <!-- ✅ CSS-Datei einbinden -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<div class="container">
     <h2>🔑 Passwortmanager</h2>
     <a href="/logout">Logout</a>
 
     <h3>Gespeicherte Passwörter:</h3>
-    <table border="1">
-        <tr><th>Dienst</th><th>Benutzername</th><th>Kategorie</th><th>Passwort</th><th>Aktion</th></tr>
+    <table>
+        <tr>
+            <th>Dienst</th>
+            <th>Benutzername</th>
+            <th>Kategorie</th>
+            <th>Passwort</th>
+            <th>Aktion</th>
+        </tr>
         {% for dienst, eintrag in daten.items() %}
         <tr>
             <td>{{ dienst }}</td>
@@ -29,5 +38,6 @@
         <input type="text" name="kategorie" placeholder="Kategorie" required>
         <button type="submit">Hinzufügen</button>
     </form>
+</div>
 </body>
 </html>

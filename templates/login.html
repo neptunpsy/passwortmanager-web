@@ -2,13 +2,21 @@
 <html>
 <head>
     <title>Login</title>
+    <!-- ✅ CSS-Datei einbinden -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+<div class="container">
     <h2>🔐 Login mit Master-PIN</h2>
-    {% if fehler %}<p style="color:red">{{ fehler }}</p>{% endif %}
-    <form method="POST">
+    
+    <!-- ✅ Fehler-Text bleibt erhalten, aber mit CSS sieht er schöner aus -->
+    {% if fehler %}<p style="color:red; text-align:center;">{{ fehler }}</p>{% endif %}
+    
+    <!-- ✅ Formular -->
+    <form method="POST" style="text-align:center;">
         <input type="password" name="pin" placeholder="PIN eingeben" required>
         <button type="submit">Login</button>
     </form>
+</div>
 </body>
 </html>
