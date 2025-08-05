@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h2>🔐 Login mit Master-PIN</h2>
+    {% if fehler %}<p style="color:red">{{ fehler }}</p>{% endif %}
+    <form method="POST">
+        <input type="password" name="pin" placeholder="PIN eingeben" required>
+        <button type="submit">Login</button>
+    </form>
+</body>
+</html>
